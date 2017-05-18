@@ -1,7 +1,3 @@
-源码地址：https://github.com/wangfupeng1988/react-simple-o2o-demo/tree/stage1-home-page
-
-
-
 # 首页开发
 
 这一大节，详细介绍一下我们如何从一个空代码框架，做出一个首页的效果。
