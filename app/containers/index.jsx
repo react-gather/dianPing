@@ -1,60 +1,38 @@
-import React from 'react'
-import PureRenderMixin from 'react-addons-pure-render-mixin'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-import LocalStore from '../util/localStore'
-import { CITYNAME } from '../config/localStoreKey'
-import * as userInfoActionsFromOtherFile from '../actions/userinfo' 
+import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+import LocalStore from '../util/localStore';
+import {CITYNAME} from '../config/localStoreKey';
 
-class App extends React.Component {
-    constructor(props, context) {
-        super(props, context);
+class App extends React.Component{
+    constructor(props,context){
+        super(props,context);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
         this.state = {
-            initDone: false
+            initDone : false
         }
     }
-    render() {
-        return (
+    render(){
+        return(
             <div>
                 {
-                    this.state.initDone
-                    ? this.props.children
-                    : <div>正在加载...</div>
+                    this.state.initDone ?
+                    this.props.children :
+                    <div>加载中</div>
                 }
             </div>
         )
     }
-    componentDidMount() {
-        // 获取位置信息
-        let cityName = LocalStore.getItem(CITYNAME)
-        if (cityName == null) {
-            cityName = '北京'
+    componentDidMount(){
+        //从localStoreage里面获取城市
+        let cityName = LocalStore.getItem(CITYNAME);
+        if(cityName == null){
+            cityName = 'chagnchun'
         }
-        this.props.userInfoActions.update({
-            cityName: cityName
-        })
 
-        // 更改状态
         this.setState({
-            initDone: true
+            initDone : true
         })
     }
 }
 
-// -------------------redux react 绑定--------------------
-
-function mapStateToProps(state) {
-    return {
-    }
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        userInfoActions: bindActionCreators(userInfoActionsFromOtherFile, dispatch),
-    }
-}
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(App)
+export default App;
