@@ -1,33 +1,29 @@
-import React from 'react'
-import PureRenderMixin from 'react-addons-pure-render-mixin'
+import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+import './style.less';
 
-import './style.less'
-
-class HomeHeader extends React.Component {
-    constructor(props, context) {
-        super(props, context);
-        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+class HomeHeader extends React.Component{
+    constructor(props,context){
+        super(props,context);
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate;
     }
-    render() {
-        return (
-            <div id="home-header" className="clear-fix">
-                <div className="home-header-left float-left">
-                    <span>{this.props.cityName}</span>
-                    &nbsp;
+    render(){
+        return(
+            <div className="clear-fix">
+                <div className="float-left">
+                    长沙
                     <i className="icon-angle-down"></i>
                 </div>
-                <div className="home-header-right float-right">
-                    <i className="icon-user"></i>
+                <div className="float-left">
+                    <input type="text"/>
+                    <i className="icon-search"></i>
                 </div>
-                <div className="home-header-middle">
-                    <div className="search-container">
-                        <i className="icon-search"></i>
-                        <input type="text" placeholder="请输入关键字"/>
-                    </div>
+                <div className="float-right">
+                    <i className="icon-user"></i>
                 </div>
             </div>
         )
     }
 }
 
-export default HomeHeader
+export default HomeHeader;
