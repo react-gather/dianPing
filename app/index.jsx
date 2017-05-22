@@ -6,6 +6,7 @@ import configureStore from './store/configureStore'
 
 import './static/css/common.less'
 import './static/css/font.css'
+import { result } from '../test/fetch'
 
 // 创建 Redux 的 store 对象
 const store = configureStore()

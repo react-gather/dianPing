@@ -1,5 +1,6 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import { Link } from 'react-router';
 import ReactSwipe from 'react-swipe';
 import './style.less'
 /*
@@ -25,13 +26,52 @@ class Category extends React.Component{
             }.bind(this)
         }
         return(
-            <div>
-                <ReactSwipe className="carousel" swipeOptions={opt}>
-                    <div>PANE 1</div>
-                    <div>PANE 2</div>
-                    <div>PANE 3</div>
+              <div id="home-category">
+                <ReactSwipe swipeOptions={opt} className="carousel">
+                    <ul className="clear-fix">
+                        <li className="float-left jingdian">景点</li>
+                        <li className="float-left ktv">KTV</li>
+                        <li className="float-left gouwu">购物</li>
+                        <li className="float-left shenghuofuwu">生活服务</li>
+                        <li className="float-left jianshenyundong">健身运动</li>
+                        <li className="float-left meifa">美发</li>
+                        <li className="float-left qinzi">亲子</li>
+                        <li className="float-left xiaochikuaican">小吃快餐</li>
+                        <li className="float-left zizhucan">自助餐</li>
+                        <li className="float-left jiuba">酒吧</li>
+                    </ul>
+                    <ul className="clear-fix">
+                        <li className="float-left jingdian">景点</li>
+                        <li className="float-left ktv">KTV</li>
+                        <li className="float-left gouwu">购物</li>
+                        <li className="float-left shenghuofuwu">生活服务</li>
+                        <li className="float-left jianshenyundong">健身运动</li>
+                        <li className="float-left meifa">美发</li>
+                        <li className="float-left qinzi">亲子</li>
+                        <li className="float-left xiaochikuaican">小吃快餐</li>
+                        <li className="float-left zizhucan">自助餐</li>
+                        <li className="float-left jiuba">酒吧</li>
+                    </ul>
+                    <ul className="clear-fix">
+                        <li className="float-left jingdian">景点</li>
+                        <li className="float-left ktv">KTV</li>
+                        <li className="float-left gouwu">购物</li>
+                        <li className="float-left shenghuofuwu">生活服务</li>
+                        <li className="float-left jianshenyundong">健身运动</li>
+                        <li className="float-left meifa">美发</li>
+                        <li className="float-left qinzi">亲子</li>
+                        <li className="float-left xiaochikuaican">小吃快餐</li>
+                        <li className="float-left zizhucan">自助餐</li>
+                        <li className="float-left jiuba">酒吧</li>
+                    </ul>
                 </ReactSwipe>
-                <div>{this.state.index}</div>
+                <div className="index-container">
+                    <ul>
+                        <li className={this.state.index === 0 ? "selected" : ''}></li>
+                        <li className={this.state.index === 1 ? "selected" : ''}></li>
+                        <li className={this.state.index === 2 ? "selected" : ''}></li>
+                    </ul>
+                </div>
             </div>
         )
     }
