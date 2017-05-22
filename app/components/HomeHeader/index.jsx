@@ -9,16 +9,18 @@ class HomeHeader extends React.Component{
     }
     render(){
         return(
-            <div className="clear-fix">
-                <div className="float-left">
-                    长沙
+            <div id="home-header" className="clear-fix">
+                <div className="float-left home-header-left">
+                    {this.props.cityName}
                     <i className="icon-angle-down"></i>
                 </div>
-                <div className="float-left">
-                    <input type="text"/>
-                    <i className="icon-search"></i>
+                <div className="float-left home-header-middle">
+                    <div className="search-container">
+                        <input type="text"/>
+                        <i className="icon-search"></i>
+                    </div>
                 </div>
-                <div className="float-right">
+                <div className="float-right home-header-right">
                     <i className="icon-user"></i>
                 </div>
             </div>
