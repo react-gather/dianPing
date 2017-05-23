@@ -31,7 +31,7 @@ module.exports = {
             { test:/\.(png|woff|woff2|svg|ttf|eot)($|\?)/i, loader:'url-loader?limit=5000'} // 限制大小小于5k
         ]
     },
-
+    devtool: 'source-map',
     eslint: {
         configFile: '.eslintrc' // Rules for eslint
     },
