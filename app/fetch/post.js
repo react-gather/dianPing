@@ -6,7 +6,7 @@ function obj2params(obj) {
     var result = '';
     var item;
     for (item in obj) {
-        result += '&' + item + '=' + encodeURIComponent(obj[item]);
+        result += '&' + item + '=' + encodeURIComponent(obj[item]);  // 函数可把字符串作为 URI 组件进行编码
     }
 
     if (result) {
